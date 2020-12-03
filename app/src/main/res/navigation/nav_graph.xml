@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ConnectFragment">
+
+    <fragment
+        android:id="@+id/ConnectFragment"
+        android:name="com.example.mqttkotlinsample.ConnectFragment"
+        android:label="@string/connect_fragment_label"
+        tools:layout="@layout/fragment_connect">
+
+        <action
+            android:id="@+id/action_ConnectFragment_to_ClientFragment"
+            app:destination="@id/ClientFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ClientFragment"
+        android:name="com.example.mqttkotlinsample.ClientFragment"
+        android:label="@string/client_fragment_label"
+        tools:layout="@layout/fragment_client">
+
+        <action
+            android:id="@+id/action_ClientFragment_to_ConnectFragment"
+            app:destination="@id/ConnectFragment" />
+    </fragment>
+</navigation>
