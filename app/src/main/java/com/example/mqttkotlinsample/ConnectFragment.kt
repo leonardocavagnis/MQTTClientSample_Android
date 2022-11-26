@@ -11,6 +11,7 @@ import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 
 class ConnectFragment : Fragment() {
+    private lateinit var binding: ConnectFragment
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,

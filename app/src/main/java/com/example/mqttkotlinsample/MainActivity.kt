@@ -9,8 +9,10 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import com.example.mqttkotlinsample.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding : ActivityMainBinding
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -15,6 +15,7 @@ import org.eclipse.paho.client.mqttv3.*
 
 class ClientFragment : Fragment() {
     private lateinit var mqttClient : MQTTClient
+    private lateinit var binding : ClientFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
