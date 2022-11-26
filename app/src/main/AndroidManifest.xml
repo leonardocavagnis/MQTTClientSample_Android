@@ -14,6 +14,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MQTTkotlinsample">
         <activity
+            android:name=".Kontrol"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.MQTTkotlinsample.NoActionBar">
@@ -23,6 +30,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <service android:name="org.eclipse.paho.android.service.MqttService" />
     </application>
 
