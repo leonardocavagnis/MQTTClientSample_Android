@@ -1,27 +1,40 @@
 package com.example.mqttkotlinsample
 
 import android.os.Bundle
+import android.system.Os.bind
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.core.os.bundleOf
+import androidx.databinding.DataBindingUtil.bind
 import androidx.navigation.fragment.findNavController
+import com.example.mqttkotlinsample.databinding.ContentMainBinding.bind
+import com.example.mqttkotlinsample.databinding.FragmentClientBinding
+import com.example.mqttkotlinsample.databinding.FragmentClientBinding.bind
+import com.example.mqttkotlinsample.databinding.FragmentConnectBinding
+import com.example.mqttkotlinsample.databinding.FragmentConnectBinding.bind
+import org.eclipse.paho.client.mqttv3.*
 
 class ConnectFragment : Fragment() {
-    private lateinit var binding: ConnectFragment
+    private lateinit var _binding:FragmentConnectBinding
+    private val binding get() = _binding!!
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_connect, container, false)
+        _binding = FragmentConnectBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<Button>(R.id.button_prefill).setOnClickListener {

@@ -11,11 +11,12 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.findNavController
+import com.example.mqttkotlinsample.databinding.FragmentClientBinding
 import org.eclipse.paho.client.mqttv3.*
 
 class ClientFragment : Fragment() {
     private lateinit var mqttClient : MQTTClient
-    private lateinit var binding : ClientFragment
+    private lateinit var clientbinding:FragmentClientBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,7 +54,10 @@ class ClientFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
         super.onViewCreated(view, savedInstanceState)
+        val binding = FragmentClientBinding.bind(view)
+        clientbinding= binding
 
         // Get arguments passed by ConnectFragment
         val serverURI   = arguments?.getString(MQTT_SERVER_URI_KEY)
